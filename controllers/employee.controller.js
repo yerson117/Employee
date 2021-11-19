@@ -1,5 +1,6 @@
 const ctrlEmployee = {},
     Employee = require ('../models/employee');
+
 ctrlEmployee.create = async (req, res) =>{
     console.log(req.body)
     const newEmployee = new Employee({
@@ -11,15 +12,11 @@ ctrlEmployee.create = async (req, res) =>{
         gender: req.body.gender ,
         dateofbirth: req.body.dateofbirth
     });
-
-    console.log('data: ', newEmployee);
-
-
+    //console.log('data: ', newEmployee);
     await newEmployee.save();
-
     res.json({
-        msg:'Employee created successfully'
+        msg:'Employee created successfully',
+        status: true
     });
-}
-
+};
 module.exports = ctrlEmployee;
