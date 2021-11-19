@@ -1,6 +1,7 @@
 const ctrlEmployee = {},
     Employee = require ('../models/employee');
 ctrlEmployee.create = async (req, res) =>{
+    console.log(req.body)
     const newEmployee = new Employee({
         name: req.body.name,
         phone: req.body.phone,
@@ -11,13 +12,8 @@ ctrlEmployee.create = async (req, res) =>{
         dateofbirth: req.body.dateofbirth
     });
 
-    console.log('name ', newEmployee.name);
-    console.log('phone ', newEmployee.phone);
-    console.log('email ', newEmployee.email);
-    console.log('document ', newEmployee.document);
-    console.log('salary ', newEmployee.salary);
-    console.log('gender ', newEmployee.gender);
-    console.log('dateofbirth ', newEmployee.dateofbirth);
+    console.log('data: ', newEmployee);
+
 
     await newEmployee.save();
 
