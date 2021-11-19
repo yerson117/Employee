@@ -2,7 +2,7 @@
 
  var employeeSchema = new mongoose.Schema({
     name: {type: String},
-    phone: {type: Number},
+    phone: {type: String},
     email: {type: String },
     document: {type: String},
     salary:{type: Number} ,
